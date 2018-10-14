@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Fuel Tax</string>
+    <string name="super_fuel">Super</string>
+    <string name="diesel">Diesel</string>
+    <string name="kerosene">Kerosene</string>
+    <string name="calculate">Calculate</string>
+    <string name="price">Price</string>
+    <string name="levy">Levy Per Ltr</string>
+    <string name="vat">VAT (e.g for 8% enter "8")</string>
+    <string name="default_numeric">0.00</string>
+</resources>

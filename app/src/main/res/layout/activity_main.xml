@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <RadioGroup
+            android:id="@+id/fuel_type_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_weight="1"
+            android:checkedButton="@+id/fuel"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/super_fuel_radio_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/super_fuel"
+                android:tag="@string/super_fuel"/>
+
+            <RadioButton
+                android:id="@+id/diesel_radio_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/diesel"
+                android:tag="@string/diesel" />
+
+            <RadioButton
+                android:id="@+id/kerosene_radio_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/kerosene"
+                android:tag="@string/kerosene" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/amount_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1.5"
+            android:background="#000"
+            android:fontFamily="@font/custom_font"
+            android:textColor="@color/colorPrimary"
+            android:textSize="32sp" />
+
+        <com.fxn769.Numpad
+            android:id="@+id/numpad"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="7"
+            app:numpad_background_resource="@drawable/numpad_background"
+            app:numpad_fontpath="fonts/custom_font.ttf"
+            app:numpad_grid_background_color="@color/colorPrimary"
+            app:numpad_grid_line_thickness="2dp"
+            app:numpad_grid_visible="true"
+            app:numpad_image_resource="@drawable/ic_launcher_background"
+            app:numpad_text_color="#000000"
+            app:numpad_text_limit="10"
+            app:numpad_text_size="16dp" />
+
+        <Button
+            android:id="@+id/calculate_button"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8sp"
+            android:layout_weight="1"
+            android:text="@string/calculate" />
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+</android.support.constraint.ConstraintLayout>
