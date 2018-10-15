@@ -37,7 +37,7 @@ public class SettingsDialog extends Dialog {
 
     private final static String NAME = "Settings";
 
-    protected SettingsDialog(@androidx.annotation.NonNull Context context, boolean cancelable, @androidx.annotation.Nullable DialogInterface.OnCancelListener cancelListener) {
+    protected SettingsDialog(Context context, boolean cancelable, DialogInterface.OnCancelListener cancelListener) {
         super(context, cancelable, cancelListener);
     }
 

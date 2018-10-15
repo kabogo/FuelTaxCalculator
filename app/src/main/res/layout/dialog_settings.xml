@@ -20,28 +20,16 @@
             android:textColor="@color/colorPrimary"
             android:textSize="9sp" />
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/priceTextInputLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <android.support.design.widget.TextInputEditText
+            <EditText
                 android:id="@+id/priceEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxWidth="100dp"
                 android:hint="@string/price"
                 android:text="@string/default_numeric"
-                android:inputType="numberDecimal"/>
+                android:inputType="numberDecimal" />
 
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/levyTextInputLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <android.support.design.widget.TextInputEditText
+            <EditText
                 android:id="@+id/levyEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -50,14 +38,7 @@
                 android:text="@string/default_numeric"
                 android:inputType="numberDecimal"/>
 
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/vatTextInputLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <android.support.design.widget.TextInputEditText
+            <EditText
                 android:id="@+id/vatEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -65,8 +46,6 @@
                 android:hint="@string/vat"
                 android:text="@string/default_numeric"
                 android:inputType="numberDecimal"/>
-
-        </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/saveButton"

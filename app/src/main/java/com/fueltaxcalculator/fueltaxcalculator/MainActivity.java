@@ -19,13 +19,13 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
-    @BindView(R.id.amountTextView)
+    @BindView(R.id.amount_textview)
     TextView amountTextView;
 
     @BindView(R.id.numpad)
     Numpad numpad;
 
-    @BindView(R.id.fuelTypeRadioGroup)
+    @BindView(R.id.fuel_type_radio_group)
     RadioGroup radioGroup;
 
     private final static String NAME = "Settings";
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         ((RadioButton)radioGroup.getChildAt(0)).setChecked(true);
+        fuelType = "Super";
 
         numpad.setOnTextChangeListner((String text, int digits_remaining) -> {
             amountTextView.setText(text);

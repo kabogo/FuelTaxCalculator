@@ -12,9 +12,7 @@
         android:background="#FFF"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="5dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        android:padding="5dp">
 
         <RadioGroup
             android:id="@+id/fuel_type_radio_group"
@@ -23,7 +21,6 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="4dp"
             android:layout_weight="1"
-            android:checkedButton="@+id/fuel"
             android:orientation="horizontal">
 
             <RadioButton
@@ -54,10 +51,9 @@
             android:layout_height="0dp"
             android:layout_marginBottom="4dp"
             android:layout_weight="1.5"
-            android:background="#000"
             android:fontFamily="@font/custom_font"
             android:textColor="@color/colorPrimary"
-            android:textSize="32sp" />
+            android:textSize="34sp" />
 
         <com.fxn769.Numpad
             android:id="@+id/numpad"
@@ -71,7 +67,7 @@
             app:numpad_grid_background_color="@color/colorPrimary"
             app:numpad_grid_line_thickness="2dp"
             app:numpad_grid_visible="true"
-            app:numpad_image_resource="@drawable/ic_launcher_background"
+            app:numpad_image_resource="@drawable/ic_backspace"
             app:numpad_text_color="#000000"
             app:numpad_text_limit="10"
             app:numpad_text_size="16dp" />
