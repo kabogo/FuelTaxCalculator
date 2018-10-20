@@ -1,57 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="#FFF">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="4dp"
+        android:layout_weight="1.5"
+        android:background="#000"
+        android:fontFamily="@font/custom_font"
+        android:textColor="@color/colorPrimary"
+        android:textSize="9sp" />
+
+    <EditText
+        android:id="@+id/priceEditText"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:layout_height="wrap_content"
+        android:hint="@string/price"
+        android:inputType="numberDecimal"
+        android:maxWidth="100dp"
+        android:text="@string/default_numeric" />
 
-        <TextView
-            android:id="@+id/titleTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginBottom="4dp"
-            android:layout_weight="1.5"
-            android:background="#000"
-            android:fontFamily="@font/custom_font"
-            android:textColor="@color/colorPrimary"
-            android:textSize="9sp" />
+    <EditText
+        android:id="@+id/levyEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/levy"
+        android:inputType="numberDecimal"
+        android:maxWidth="100dp"
+        android:text="@string/default_numeric" />
 
-            <EditText
-                android:id="@+id/priceEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxWidth="100dp"
-                android:hint="@string/price"
-                android:text="@string/default_numeric"
-                android:inputType="numberDecimal" />
+    <EditText
+        android:id="@+id/vatEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/vat"
+        android:inputType="numberDecimal"
+        android:maxWidth="100dp"
+        android:text="@string/default_numeric" />
 
-            <EditText
-                android:id="@+id/levyEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxWidth="100dp"
-                android:hint="@string/levy"
-                android:text="@string/default_numeric"
-                android:inputType="numberDecimal"/>
-
-            <EditText
-                android:id="@+id/vatEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxWidth="100dp"
-                android:hint="@string/vat"
-                android:text="@string/default_numeric"
-                android:inputType="numberDecimal"/>
-
-        <Button
-            android:id="@+id/saveButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Save"/>
-    </LinearLayout>
-
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save" />
+</LinearLayout>
