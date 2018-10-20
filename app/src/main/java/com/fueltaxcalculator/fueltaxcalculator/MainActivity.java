@@ -88,9 +88,11 @@ public class MainActivity extends AppCompatActivity {
                 double decimalVat = Double.parseDouble(vat);
                 double decimalAmount = Double.parseDouble(amount);
 
-                double actualLevy = (decimalAmount * decimalLevy) / decimalPrice;
+                double taxableAmountPerLtr = decimalPrice - decimalLevy;
+                double totalTaxableAmount = decimalAmount * taxableAmountPerLtr;
 
-                double tax = ((decimalAmount - actualLevy) * (decimalVat/100));
+                double amountBeforeTax = (totalTaxableAmount * 100) / (100 + decimalVat);
+                double tax = totalTaxableAmount - amountBeforeTax;
                 String readableTax = String.valueOf(Math.round(tax * 100.0) / 100.0);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);

@@ -85,6 +85,16 @@ public class SettingsDialog extends Dialog implements android.view.View.OnClickL
     public void setTitle(String title){
         titleTextView.setText(title);
         fuelType = title;
+
+        String price = getSharedPrefs().getString(fuelType + "_price", null);
+
+        String levy = getSharedPrefs().getString(fuelType + "_levy", null);
+
+        String vat = getSharedPrefs().getString(fuelType + "_vat", null);
+
+        if (price != null) priceEditText.setText(price);
+        if (levy != null) levyEditText.setText(levy);
+        if(vat != null) vatEditText.setText(vat);
     }
 
     @Override
