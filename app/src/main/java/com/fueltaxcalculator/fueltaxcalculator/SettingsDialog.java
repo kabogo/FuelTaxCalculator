@@ -36,6 +36,8 @@ public class SettingsDialog extends Dialog implements android.view.View.OnClickL
     @BindView(R.id.saveButton)
     Button saveButton;
 
+    String fuelType;
+
     private final static String NAME = "Settings";
 
     protected SettingsDialog(Context context, boolean cancelable, DialogInterface.OnCancelListener cancelListener) {
@@ -67,11 +69,11 @@ public class SettingsDialog extends Dialog implements android.view.View.OnClickL
             return;
         }
 
-        getSharedPrefs().edit().putString(titleTextView + "_price", priceEditText.getText().toString()).apply();
+        getSharedPrefs().edit().putString( fuelType + "_price", priceEditText.getText().toString()).apply();
 
-        getSharedPrefs().edit().putString(titleTextView + "_levy", levyEditText.getText().toString()).apply();
+        getSharedPrefs().edit().putString(fuelType + "_levy", levyEditText.getText().toString()).apply();
 
-        getSharedPrefs().edit().putString(titleTextView + "_vat", vatEditText.getText().toString()).apply();
+        getSharedPrefs().edit().putString(fuelType + "_vat", vatEditText.getText().toString()).apply();
 
         this.dismiss();
     }
@@ -82,6 +84,7 @@ public class SettingsDialog extends Dialog implements android.view.View.OnClickL
 
     public void setTitle(String title){
         titleTextView.setText(title);
+        fuelType = title;
     }
 
     @Override

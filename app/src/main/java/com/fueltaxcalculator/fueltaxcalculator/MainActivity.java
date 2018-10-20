@@ -6,6 +6,9 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     private final static String NAME = "Settings";
     String fuelType = "";
+    String amount = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,24 +68,30 @@ public class MainActivity extends AppCompatActivity {
 
         String vat = getSharedPrefs().getString(fuelType + "_vat", null);
 
+        String amount = amountTextView.getText().toString();
+
         if (price == null || levy == null || vat == null){
             SettingsDialog settingsDialog = new SettingsDialog(this, false, dialogInterface -> {
-                String a = "";
-                String b ="";
+                //Do nothing
             });
 
             settingsDialog.show();
             settingsDialog.setTitle(fuelType);
 
             Toast.makeText(this, "You need to enter some settings first", Toast.LENGTH_LONG).show();
+        } else if(TextUtils.isEmpty(amount)){
+            Toast.makeText(this, "You need to enter the amount", Toast.LENGTH_LONG).show();
         }else {
             try{
                 double decimalPrice = Double.parseDouble(price);
                 double decimalLevy = Double.parseDouble(levy);
                 double decimalVat = Double.parseDouble(vat);
+                double decimalAmount = Double.parseDouble(amount);
 
-                double tax = (decimalPrice - decimalLevy) * (decimalVat/100);
-                String readableTax = String.valueOf(tax);
+                double actualLevy = (decimalAmount * decimalLevy) / decimalPrice;
+
+                double tax = ((decimalAmount - actualLevy) * (decimalVat/100));
+                String readableTax = String.valueOf(Math.round(tax * 100.0) / 100.0);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage(readableTax)
@@ -96,5 +106,29 @@ public class MainActivity extends AppCompatActivity {
 
     private SharedPreferences getSharedPrefs() {
         return this.getSharedPreferences(NAME, Context.MODE_PRIVATE);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_home, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_edit:
+                SettingsDialog settingsDialog = new SettingsDialog(this, true, dialogInterface -> {
+                    //Do nothing
+                });
+
+                settingsDialog.show();
+                settingsDialog.setTitle(fuelType);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
