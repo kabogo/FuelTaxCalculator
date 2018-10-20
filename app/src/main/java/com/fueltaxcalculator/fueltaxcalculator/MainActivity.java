@@ -66,10 +66,12 @@ public class MainActivity extends AppCompatActivity {
 
         if (price == null || levy == null || vat == null){
             SettingsDialog settingsDialog = new SettingsDialog(this, false, dialogInterface -> {
-                //Do nothing
+                String a = "";
+                String b ="";
             });
 
             settingsDialog.show();
+            settingsDialog.setTitle(fuelType);
 
             Toast.makeText(this, "You need to enter some settings first", Toast.LENGTH_LONG).show();
         }else {

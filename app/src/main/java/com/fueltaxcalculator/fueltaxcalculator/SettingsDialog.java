@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -19,7 +20,7 @@ import butterknife.OnClick;
 /**
  * Created by munene on 10/14/2018.
  */
-public class SettingsDialog extends Dialog {
+public class SettingsDialog extends Dialog implements android.view.View.OnClickListener {
     @BindView(R.id.titleTextView)
     TextView titleTextView;
 
@@ -46,10 +47,10 @@ public class SettingsDialog extends Dialog {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dialog_settings);
         ButterKnife.bind(this);
+        saveButton.setOnClickListener(this);
     }
 
-    @OnClick(R.id.saveButton)
-    public void save(View view) {
+    public void save() {
         if (TextUtils.isEmpty(priceEditText.getText().toString()))
         {
             Toast.makeText(this.getContext(), "You need to set the price", Toast.LENGTH_LONG).show();
@@ -72,10 +73,19 @@ public class SettingsDialog extends Dialog {
 
         getSharedPrefs().edit().putString(titleTextView + "_vat", vatEditText.getText().toString()).apply();
 
-        this.hide();
+        this.dismiss();
     }
 
     private SharedPreferences getSharedPrefs() {
         return this.getContext().getSharedPreferences(NAME, Context.MODE_PRIVATE);
+    }
+
+    public void setTitle(String title){
+        titleTextView.setText(title);
+    }
+
+    @Override
+    public void onClick(View view) {
+        save();
     }
 }
