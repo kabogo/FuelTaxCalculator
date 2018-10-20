@@ -91,12 +91,23 @@ public class MainActivity extends AppCompatActivity {
                 double totalTaxableAmount = numberOfLitrs * taxableAmountPerLtr;
 
                 double amountBeforeTax = (totalTaxableAmount * 100) / (100 + decimalVat);
+                double nonTaxableAmount = decimalAmount - amountBeforeTax;
                 double tax = totalTaxableAmount - amountBeforeTax;
+
+                String readableAmount = String.valueOf(Math.round(decimalAmount * 100.0) / 100.0);
                 String readableTax = String.valueOf(Math.round(tax * 100.0) / 100.0);
+                String readableNonTaxableAmount = String.valueOf(Math.round(nonTaxableAmount * 100.0) / 100.0);
+
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.append("Total Sale: " + readableAmount);
+                stringBuilder.append("\n");
+                stringBuilder.append(decimalVat + "% VAT: " + readableTax);
+                stringBuilder.append("\n");
+                stringBuilder.append("ZERO% VAT: " + readableNonTaxableAmount);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage(readableTax)
-                        .setTitle("Your Tax value");
+                builder.setMessage(stringBuilder.toString())
+                        .setTitle("Your values");
                 AlertDialog dialog = builder.create();
                 dialog.show();
             }catch (Exception ex){
