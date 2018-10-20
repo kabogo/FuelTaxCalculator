@@ -46,6 +46,16 @@
         </RadioGroup>
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1.5"
+            android:fontFamily="@font/custom_font"
+            android:textColor="@color/colorPrimary"
+            android:text="Please input the gross amount"
+            android:textSize="14sp" />
+
+        <TextView
             android:id="@+id/amount_textview"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
@@ -55,7 +65,7 @@
             android:textColor="@color/colorPrimary"
             android:textSize="34sp" />
 
-        <com.fxn769.Numpad
+        <com.fueltaxcalculator.fueltaxcalculator.Numpad
             android:id="@+id/numpad"
             android:layout_width="match_parent"
             android:layout_height="0dp"

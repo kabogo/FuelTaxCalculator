@@ -15,8 +15,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.fxn769.Numpad;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -89,7 +87,8 @@ public class MainActivity extends AppCompatActivity {
                 double decimalAmount = Double.parseDouble(amount);
 
                 double taxableAmountPerLtr = decimalPrice - decimalLevy;
-                double totalTaxableAmount = decimalAmount * taxableAmountPerLtr;
+                double numberOfLitrs = decimalAmount / decimalPrice;
+                double totalTaxableAmount = numberOfLitrs * taxableAmountPerLtr;
 
                 double amountBeforeTax = (totalTaxableAmount * 100) / (100 + decimalVat);
                 double tax = totalTaxableAmount - amountBeforeTax;
