@@ -102,9 +102,11 @@ public class MainActivity extends AppCompatActivity {
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.append("Total Sale: " + readableAmount);
                 stringBuilder.append("\n");
-                stringBuilder.append(decimalVat + "% VAT: " + readableTax);
+                stringBuilder.append("Vatable Value: " + totalTaxableAmount);
                 stringBuilder.append("\n");
-                stringBuilder.append("ZERO% VAT: " + readableNonTaxableAmount);
+                stringBuilder.append("Levies 0%: " + readableNonTaxableAmount);
+                stringBuilder.append("\n");
+                stringBuilder.append(decimalVat + "% VAT: " + readableTax);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage(stringBuilder.toString())
