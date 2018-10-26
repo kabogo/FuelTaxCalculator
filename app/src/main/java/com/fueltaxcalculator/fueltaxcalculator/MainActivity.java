@@ -98,11 +98,12 @@ public class MainActivity extends AppCompatActivity {
                 String readableAmount = String.valueOf(Math.round(decimalAmount * 100.0) / 100.0);
                 String readableTax = String.valueOf(Math.round(tax * 100.0) / 100.0);
                 String readableNonTaxableAmount = String.valueOf(Math.round(nonTaxableAmount * 100.0) / 100.0);
+                String readableTotalTaxableAmount = String.valueOf(Math.round(totalTaxableAmount * 100.0) / 100.0);
 
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.append("Total Sale: " + readableAmount);
                 stringBuilder.append("\n");
-                stringBuilder.append("Vatable Value: " + totalTaxableAmount);
+                stringBuilder.append("Vatable Value: " + readableTotalTaxableAmount);
                 stringBuilder.append("\n");
                 stringBuilder.append("Levies 0%: " + readableNonTaxableAmount);
                 stringBuilder.append("\n");
