@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Kenya Fuel Tax Calculator</string>
+    <string name="app_name">Kenya Fuel Tax Calc</string>
     <string name="super_fuel">Super</string>
     <string name="diesel">Diesel</string>
     <string name="kerosene">Kerosene</string>
