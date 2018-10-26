@@ -18,6 +18,7 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import me.toptas.fancyshowcase.FancyShowCaseView;
 
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.amount_textview)
@@ -124,6 +125,21 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_home, menu);
+
+        boolean shouldShowNotification = getSharedPrefs().getBoolean("shouldShowNotification", true);
+
+        if(shouldShowNotification){
+            getSharedPrefs().edit().putBoolean("shouldShowNotification", false)
+                    .apply();
+
+            View view = menu.getItem(0).getActionView();
+            new FancyShowCaseView.Builder(this)
+                    .title("Use the edit option on the top of the screen to edit the price, VAT and levy")
+                    .fitSystemWindows(true)
+                    .build()
+                    .show();
+        }
+
         return true;
     }
 
@@ -138,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
 
                 settingsDialog.show();
                 settingsDialog.setTitle(fuelType);
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
