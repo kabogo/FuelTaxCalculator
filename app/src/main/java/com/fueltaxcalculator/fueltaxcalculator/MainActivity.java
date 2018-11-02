@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 double totalTaxableAmount = numberOfLitrs * taxableAmountPerLtr;
 
                 double amountBeforeTax = (totalTaxableAmount * 100) / (100 + decimalVat);
-                double nonTaxableAmount = decimalAmount - amountBeforeTax;
+                double nonTaxableAmount = numberOfLitrs * decimalLevy;
                 double tax = totalTaxableAmount - amountBeforeTax;
 
                 String readableAmount = String.valueOf(Math.round(decimalAmount * 100.0) / 100.0);
