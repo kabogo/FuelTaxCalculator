@@ -101,13 +101,18 @@ public class MainActivity extends AppCompatActivity {
                 String readableTotalTaxableAmount = String.valueOf(Math.round(totalTaxableAmount * 100.0) / 100.0);
 
                 StringBuilder stringBuilder = new StringBuilder();
-                stringBuilder.append("Total Sale: " + readableAmount);
+                stringBuilder.append("Total Sale Value: " + readableAmount);
                 stringBuilder.append("\n");
-                stringBuilder.append("Vatable Value: " + readableTotalTaxableAmount);
+                stringBuilder.append("Vat Inclusive Value: " + readableTotalTaxableAmount);
                 stringBuilder.append("\n");
-                stringBuilder.append("Levies 0%: " + readableNonTaxableAmount);
+                stringBuilder.append("Exempt(Levies) 0%: " + readableNonTaxableAmount);
                 stringBuilder.append("\n");
-                stringBuilder.append(decimalVat + "% VAT: " + readableTax);
+                stringBuilder.append("VAT " + decimalVat + "% Amount: " + readableTax);
+                stringBuilder.append("\n");
+                stringBuilder.append("\n");
+                stringBuilder.append("Total Litres: " + numberOfLitrs);
+                stringBuilder.append("\n");
+                stringBuilder.append("Price Per Litre: " + price);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage(stringBuilder.toString())
