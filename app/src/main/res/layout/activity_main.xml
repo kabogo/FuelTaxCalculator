@@ -18,8 +18,8 @@
             android:id="@+id/fuel_type_radio_group"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginBottom="4dp"
             android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -27,22 +27,22 @@
                 android:id="@+id/super_fuel_radio_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/super_fuel"
-                android:tag="@string/super_fuel"/>
+                android:tag="@string/super_fuel"
+                android:text="@string/super_fuel" />
 
             <RadioButton
                 android:id="@+id/diesel_radio_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/diesel"
-                android:tag="@string/diesel" />
+                android:tag="@string/diesel"
+                android:text="@string/diesel" />
 
             <RadioButton
                 android:id="@+id/kerosene_radio_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/kerosene"
-                android:tag="@string/kerosene" />
+                android:tag="@string/kerosene"
+                android:text="@string/kerosene" />
         </RadioGroup>
 
         <TextView
@@ -50,8 +50,8 @@
             android:layout_height="0dp"
             android:layout_weight="1.5"
             android:fontFamily="@font/custom_font"
-            android:textColor="@color/colorPrimary"
             android:text="Please input the gross amount"
+            android:textColor="@color/colorPrimary"
             android:textSize="14sp" />
 
         <TextView
@@ -88,6 +88,15 @@
             android:layout_marginBottom="8sp"
             android:layout_weight="1"
             android:text="@string/calculate" />
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            app:adSize="BANNER"
+            app:adUnitId="@string/ad_mob_banner_unit_id"/>
 
     </android.support.v7.widget.LinearLayoutCompat>
 

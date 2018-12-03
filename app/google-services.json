@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1033455977259",
+    "firebase_url": "https://kenya-fuel-tax-calculator.firebaseio.com",
+    "project_id": "kenya-fuel-tax-calculator",
+    "storage_bucket": "kenya-fuel-tax-calculator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1033455977259:android:3538460bf757cf0d",
+        "android_client_info": {
+          "package_name": "com.fueltaxcalculator.fueltaxcalculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1033455977259-ef2sp6v1fi04aa1dj7bf4orfge7mmorh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIiQKmMnJ1fbXg1ibaVCdfcOUCwDT9r28"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

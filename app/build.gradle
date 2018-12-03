@@ -6,8 +6,8 @@ android {
         applicationId "com.fueltaxcalculator.fueltaxcalculator"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 3
-        versionName "1.1.0"
+        versionCode 4
+        versionName "1.2.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -30,8 +30,13 @@ dependencies {
     implementation 'com.jakewharton:butterknife:9.0.0-rc1'
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.github.faruktoptas:FancyShowCaseView:1.1.0'
+    implementation 'com.google.firebase:firebase-core:16.0.5'
+    implementation 'com.google.firebase:firebase-ads:17.1.1'
+    implementation 'com.google.android.gms:play-services-ads:17.1.1'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc1'
 }
+
+apply plugin: 'com.google.gms.google-services'

@@ -15,6 +15,11 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -30,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.fuel_type_radio_group)
     RadioGroup radioGroup;
 
+    @BindView(R.id.adView)
+    AdView adView;
+
     private final static String NAME = "Settings";
     String fuelType = "";
     String amount = "";
@@ -39,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        MobileAds.initialize(this, getResources().getString(R.string.ad_mob_app_id));
 
         ((RadioButton)radioGroup.getChildAt(0)).setChecked(true);
         fuelType = "Super";
@@ -55,6 +64,43 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        adView.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+                String a = "";
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                String a = "";
+            }
+
+            @Override
+            public void onAdOpened() {
+                // Code to be executed when an ad opens an overlay that
+                // covers the screen.
+                String a = "";
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                // Code to be executed when the user has left the app.
+                String a = "";
+            }
+
+            @Override
+            public void onAdClosed() {
+                // Code to be executed when when the user is about to return
+                // to the app after tapping on an ad.
+                String a = "";
+            }
+        });
+
+        //Load ads
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
     }
 
     @OnClick(R.id.calculate_button)
